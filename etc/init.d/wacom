@@ -1,0 +1,13 @@
+# find any wacom devices
+for udi in `hal-find-by-property --key input.x11_driver --string wacom`
+do
+type=`hal-get-property --udi $udi --key input.x11_options.Type`
+# rewrite the names that the Xserver will use
+hal-set-property --udi $udi --key info.product --string $type
+case $type in
+stylus|eraser)
+# map stylus button 2 to mouse button 3
+hal-set-property --udi $udi --key input.x11_options.Button2 --string 3
+;;
+esac
+done

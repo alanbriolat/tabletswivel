@@ -1,0 +1,3 @@
+event=ibm/hotkey HKEY 00000080 00005009
+action=/etc/acpi/x200tsdown.sh
+

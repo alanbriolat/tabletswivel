@@ -1,0 +1,3 @@
+event=ibm/hotkey HKEY 00000080 0000500a
+action=/etc/acpi/x200tsup.sh
+
